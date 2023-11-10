@@ -13,9 +13,9 @@
       <form method="post">
         <div class="text-input">
           <textarea name="text-to-translate" spellcheck="false" class="from-text"
-            placeholder="O que deseja traduzir?">{{ text_to_translate }}</textarea>
-          <textarea spellcheck="false" placeholder="Tradução" readonly disabled
-            class="to-text">{{ translated }}</textarea>
+            placeholder="O que deseja traduzir">{{ text_to_translate }}</textarea>
+          <textarea spellcheck="false" readonly disabled class="to-text"
+            placeholder="Tradução">{{ translated }}</textarea>
         </div>
         <ul class="controls">
           <li class="row from">
@@ -32,7 +32,7 @@
           </div>
           <li class="row to">
             <select name="translate-to">
-              {% for language in languages%}
+              {% for language in languages %}
               <option value="{{ language.acronym }}" {% if language.acronym==translate_to %}selected{% endif %}>
                 {{ language.name|upper }}
               </option>
